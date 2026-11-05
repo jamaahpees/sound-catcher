@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <title>Song Catcher</title>
+    <link rel="stylesheet" href="ui.css" />
+  </head>
+  <body class="popup">
+    <header class="topbar">
+      <div class="brand">
+        <span class="logo" aria-hidden="true"></span>
+        <span>Song Catcher</span>
+      </div>
+      <span class="pill" id="statusPill">Siap</span>
+    </header>
+
+    <main>
+      <section class="now">
+        <div class="art" id="art"><span aria-hidden="true">♪</span></div>
+        <div class="now-text">
+          <p class="track" id="trackTitle">Tidak ada lagu terdeteksi</p>
+          <p class="sub" id="trackArtist">Putar audio di tab mana pun</p>
+        </div>
+      </section>
+
+      <button id="openBtn" class="primary">Buka jendela rekam</button>
+      <p class="hint">
+        Merekam output audio seperti OBS: pilih seluruh layar, satu jendela, atau satu tab,
+        lalu centang "Bagikan audio sistem".
+      </p>
+
+      <section class="panel">
+        <div class="row">
+          <label for="format">Format</label>
+          <select id="format">
+            <option value="mp3">MP3</option>
+            <option value="wav">WAV</option>
+          </select>
+        </div>
+        <div class="row" id="bitrateRow">
+          <label for="bitrate">Bitrate MP3</label>
+          <select id="bitrate">
+            <option value="128">128 kbps</option>
+            <option value="192">192 kbps</option>
+            <option value="256">256 kbps</option>
+            <option value="320">320 kbps</option>
+          </select>
+        </div>
+        <label class="check">
+          <input type="checkbox" id="autoDownload" />
+          <span>Unduh otomatis setelah stop</span>
+        </label>
+      </section>
+
+      <section class="library">
+        <div class="lib-head">
+          <h2>Rekaman</h2>
+          <span class="sub" id="libCount"></span>
+        </div>
+        <ul class="list" id="list"></ul>
+        <p class="empty" id="empty">Belum ada rekaman.</p>
+      </section>
+
+      <div id="notice" class="notice" role="status" hidden></div>
+    </main>
+
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>
